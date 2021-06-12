@@ -1,0 +1,13 @@
+D:\FIS\FIS_Training\Ex\Ex1\Ex1\bin\Debug\netcoreapp3.1\Ex1.exe
+D:\FIS\FIS_Training\Ex\Ex1\Ex1\bin\Debug\netcoreapp3.1\Ex1.deps.json
+D:\FIS\FIS_Training\Ex\Ex1\Ex1\bin\Debug\netcoreapp3.1\Ex1.runtimeconfig.json
+D:\FIS\FIS_Training\Ex\Ex1\Ex1\bin\Debug\netcoreapp3.1\Ex1.runtimeconfig.dev.json
+D:\FIS\FIS_Training\Ex\Ex1\Ex1\bin\Debug\netcoreapp3.1\Ex1.dll
+D:\FIS\FIS_Training\Ex\Ex1\Ex1\bin\Debug\netcoreapp3.1\Ex1.pdb
+D:\FIS\FIS_Training\Ex\Ex1\Ex1\obj\Debug\netcoreapp3.1\Ex1.csprojAssemblyReference.cache
+D:\FIS\FIS_Training\Ex\Ex1\Ex1\obj\Debug\netcoreapp3.1\Ex1.AssemblyInfoInputs.cache
+D:\FIS\FIS_Training\Ex\Ex1\Ex1\obj\Debug\netcoreapp3.1\Ex1.AssemblyInfo.cs
+D:\FIS\FIS_Training\Ex\Ex1\Ex1\obj\Debug\netcoreapp3.1\Ex1.csproj.CoreCompileInputs.cache
+D:\FIS\FIS_Training\Ex\Ex1\Ex1\obj\Debug\netcoreapp3.1\Ex1.dll
+D:\FIS\FIS_Training\Ex\Ex1\Ex1\obj\Debug\netcoreapp3.1\Ex1.pdb
+D:\FIS\FIS_Training\Ex\Ex1\Ex1\obj\Debug\netcoreapp3.1\Ex1.genruntimeconfig.cache
