@@ -24,31 +24,33 @@ namespace Ex1
                 switch (choice)
                 {
                     case 1:
-                        List<ProductEntity> dataProduct = main.GetProducts();
                         List<OptionEntity> dataOption = main.GetOptions();
-                        ShowExitsOption(dataProduct, dataOption);
+                        ShowExitsOption(dataOption);
                         break;
 
                     case 2:
-                        ShowAllOption(main);
+                        List<List<ValueEntity>> mixes1 = main.GenAllOption();
+                        ShowAllOption(mixes1);
                         break;
 
                     case 3:
-                        List<string> variables = getRequest();
+                        Dictionary<string, string> variables = getRequest();
                         bool result = main.AddValue(variables);
                         Print(result ? "Them thanh cong" : "That bai");
                         break;
+
+
+                    case 4:
+                        
+                        break;
+
                 }
 
             } while (choice != 0);
         }
 
-        private static void ShowExitsOption(List<ProductEntity> dataProduct, List<OptionEntity> dataOption)
+        private static void ShowExitsOption(List<OptionEntity> dataOption)
         {
-            foreach (var product in dataProduct)
-            {
-                Print($"Product Id: { product.ProductId}; Product name: {product.ProductName}");
-            }
             foreach (var option in dataOption)
             {
                 string optionValue = "";
@@ -60,35 +62,53 @@ namespace Ex1
             }
         }
 
-        private static void ShowAllOption(IMainService main)
+        private static void ShowAllOption(List<List<ValueEntity>> mixes)
         {
-            List<ItemEntity> mixes = new List<ItemEntity>();
-            mixes = main.GetAllOption(mixes);
             int count = 1;
-            foreach (var mix in mixes)
+            foreach (var listValues in mixes)
             {
-                Print($"{ count++ }. {mix.ItemCode} <=> {mix.ItemString}");
+                string itemStr = "";
+                foreach (var value in listValues)
+                {
+                    itemStr += value.ValueId + "; ";
+                }
+                itemStr += " <=> ";
+                foreach (var value in listValues)
+                {
+                    itemStr += value.ValueName + "; ";
+                }
+                Print($"{count++}. {itemStr}");
             }
         }
 
-        static List<string> getRequest()
+        static Dictionary<string, string> getRequest()
         {
-            Print("1. Mau sac");
-            Print("2. kich co");
-            Print("3. Chat lieu");
-            string option = Prompt("Chon bien the muon them gia tri: ");
-            string valueId = Prompt("Nhap ma gia tri moi: ");
-            string valueName = Prompt("Nhap ten gia tri moi: ");
-            return new List<string>() { option, valueId, valueName};
+            Dictionary<string, string> data = new Dictionary<string, string>();
+            string optionId = Prompt("Option Id: ");
+            string optionName = Prompt("Option Name: ");
+            data.Add("optionId", optionId);
+            data.Add("optionName", optionName);
+
+            string confirm = "n";
+            do
+            {
+                string valueId = Prompt("Value Id: ");
+                string valueName = Prompt("Value Name: ");
+                data.Add(valueId, valueName);
+                confirm = Prompt("Tiep tuc them value(y/n): ");
+            } while (confirm == "y");
+
+            return data;
         }
 
         static void ShowMenu()
         {
             Print("");
             Print("************ MENU ***********");
-            Print("1. Hien thi cac bien the co san.");
+            Print("1. Hien thi cac bien the hien tai.");
             Print("2. Hien thi tat ca cac tuy chon san pham.");
             Print("3. Them gia tri cho bien the.");
+            Print("4. ...");
             Print("0. Exit.");
 
             Print("");
